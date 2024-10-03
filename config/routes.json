@@ -1,0 +1,90 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/signup",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": true
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": true
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/logout",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": true
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/forgetPassword",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": true
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/v1/auth/resetPassword/:token",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": true
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/v1/auth/changePassword/:userID",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": false,
+    "rolesAllowed": {
+      "admin": { "access": "all" },
+      "user": { "access": "self" }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": false,
+    "rolesAllowed": {
+      "admin": { "access": "all" },
+      "user": { "access": "self" }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/users/",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": false,
+    "rolesAllowed": {
+      "admin": { "access": "all" }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/:userID",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": false,
+    "rolesAllowed": {
+      "admin": { "access": "all" },
+      "user": { "access": "self" }
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/v1/users/:userID",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": false,
+    "rolesAllowed": {
+      "admin": { "access": "all" },
+      "user": { "access": "self" }
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/users/:userID",
+    "serviceUrl": "${AUTH_SERVICE_HOST}",
+    "public": false,
+    "rolesAllowed": {
+      "admin": { "access": "all" }
+    }
+  }
+]
