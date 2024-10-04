@@ -2,6 +2,8 @@
 
 `notes-api-gateway` is a key component of the Notes Application system, responsible for routing requests, handling authorization, and forwarding them to the appropriate microservices. It is implemented in a generic manner, allowing for reuse in other projects.
 
+![System architcture](https://github.com/evgeniivall/notes-api-gateway/blob/main/images/notes-app-system-design-api-gateway.png)
+
 ## Features
 
 - **Routing Configuration:** Uses a configurable `routes.json` file to define routes for each microservice.
@@ -71,6 +73,7 @@ The `routes.json` file defines the routes handled by the API Gateway and the ser
 ### Authentication & Authorization Flow
 
 The following diagram outlines the request flow through the API Gateway:
+![Auth flow diagram](https://github.com/evgeniivall/notes-api-gateway/blob/main/images/notes-app-authorization-flow.png)
 
 1. A request is sent to the **API Gateway** (e.g., `GET /api/v1/data`) with a JWT token.
 2. The **API Gateway** authenticates the request by calling the `/introspect` route of the **Auth Service**.
